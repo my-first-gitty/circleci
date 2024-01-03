@@ -1,0 +1,28 @@
+
+          name: Onetab Pipeline Configuration
+
+          on:
+            push:
+              branches:
+                - main
+                
+          jobs:
+            build_and_test:
+              runs-on: ubuntu-latest
+          
+              steps:
+              - name: Checkout code
+                uses: actions/checkout@v2
+          
+              - name: Install Dependencies
+                run: |
+                  npm install
+          
+              - name: Run Tests
+                run: |
+                  npm test
+          
+              - name: Build
+                run: |
+                  npm run build
+        
