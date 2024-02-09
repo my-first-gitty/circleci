@@ -1,28 +1,29 @@
+name: Build Next js Application
+repoFullName: my-first-gitty-my-first-gitty/circleci
+'on':
+  push:
+    branches:
+      - CircleCI
+jobs:
+  run-deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version:
+          - 18.17.0
+    steps:
+      - uses: actions/checkout@v3
+        name: Setup jobs
+        with:
+          fetch-depth: 0
+      
+      - uses: actions/setup-node@v3
+        name: Setup environment
+        with:
+          node-version: ${{ matrix.node-version }}
+      
+      - name: Install dependencies
+        run: git pull origin CircleCI && npm install --global yarn && yarn
 
-          name: Onetab Pipeline Configuration
-
-          on:
-            push:
-              branches:
-                - main
-                
-          jobs:
-            build_and_test:
-              runs-on: ubuntu-latest
-          
-              steps:
-              - name: Checkout code
-                uses: actions/checkout@v2
-          
-              - name: Install Dependencies
-                run: |
-                  npm install
-          
-              - name: Run Tests
-                run: |
-                  npm test
-          
-              - name: Build
-                run: |
-                  npm run build
-        
+      - name: Building
+        run: yarn run build
