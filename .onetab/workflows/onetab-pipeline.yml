@@ -6,7 +6,7 @@ repoFullName: my-first-gitty-my-first-gitty/circleci
       - CircleCI
 jobs:
   run-deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest 
     strategy:
       matrix:
         node-version:
