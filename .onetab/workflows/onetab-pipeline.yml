@@ -1,5 +1,5 @@
 name: Build Next js Application
-repoFullName: my-first-gitty-my-first-gitty/circleci
+repoFullName: my-first-gitty-my-first-gitty/circleci 
 'on':
   push:
     branches:
