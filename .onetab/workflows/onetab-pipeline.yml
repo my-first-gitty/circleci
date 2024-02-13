@@ -23,7 +23,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
       
       - name: Install dependencies
-        run: git pull origin CircleCI && npm install --global yarn && yarn
+        run: npm install --global yarn && yarn
 
       - name: Building
         run: yarn run build
