@@ -1,8 +1,8 @@
 name: Build Next js Application
 repoFullName: my-first-gitty-my-first-gitty/circleci 
-'on':
+on:
   push:
-    branches:
+    branch:
       - CircleCI
 jobs:
   run-deploy:
