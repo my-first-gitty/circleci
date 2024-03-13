@@ -26,4 +26,5 @@ jobs:
         run: git pull origin CircleCI && npm install --global yarn && yarn
 
       - name: Building
+        run: yarn run build
         
