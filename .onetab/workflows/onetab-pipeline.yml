@@ -3,7 +3,7 @@ repoFullName: my-first-gitty-my-first-gitty/circleci
 on:
   push:
     branches:
-      - CircleCI 
+      - CircleCI
 jobs:
   run-deploy:
     runs-on: ubuntu-latest 
